@@ -11,6 +11,7 @@ public class HomeCon {
 
     @GetMapping("/home")
     public String doHome() {
+        System.out.println("test");
         return "/v1/home/home";
     }
 
