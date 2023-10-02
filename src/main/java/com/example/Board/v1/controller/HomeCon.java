@@ -1,4 +1,4 @@
-package com.example.Board.v1;
+package com.example.Board.v1.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +11,6 @@ public class HomeCon {
 
     @GetMapping("/home")
     public String doHome() {
-        System.out.println("test");
         return "/v1/home/home";
     }
 
