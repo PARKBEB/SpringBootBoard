@@ -1,9 +1,7 @@
 package com.example.Board.v1.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/v1")
@@ -12,6 +10,14 @@ public class HomeCon {
     @GetMapping("/home")
     public String doHome() {
         return "/v1/home/home";
+    }
+
+    @GetMapping("/rest2")
+    @ResponseBody // Controller + ResponseBody의 역할이 합쳐져서 RestController의 역할을 함
+    public String doRest2() {
+        String strHtml = "<html><body>Hi Rest <hr> ^*^ </html></body>";
+
+        return strHtml;
     }
 
     @GetMapping("/home2")
