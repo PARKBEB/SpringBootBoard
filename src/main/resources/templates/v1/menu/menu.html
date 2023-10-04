@@ -73,46 +73,11 @@
 
     <tbody id="t_body">
     <!--- 데이타 출력 부분 -->
-      <tr class="tr_td">
-        <td>Chk</td>
-        <th>커피No</th>
-        <td>메뉴명</td>
-        <td>종류</td>
-        <td>가격</td>
-        <td>등록일</td>
-        <td>수정일</td>
-        <td>수정</td>
-        <td>삭제</td>
-      </tr>
-
-      <tr class="tr_td">
-        <td>Chk</td>
-        <th>커피No</th>
-        <td>메뉴명</td>
-        <td>종류</td>
-        <td>가격</td>
-        <td>등록일</td>
-        <td>수정일</td>
-        <td>수정</td>
-        <td>삭제</td>
-      </tr>
-
-      <tr class="tr_td">
-        <td>Chk</td>
-        <th>커피No</th>
-        <td>메뉴명</td>
-        <td>종류</td>
-        <td>가격</td>
-        <td>등록일</td>
-        <td>수정일</td>
-        <td>수정</td>
-        <td>삭제</td>
-      </tr>
 
     <tr th:each="prod : ${list}">
       <td>Chk</td>
-      <th th:text="${prod.get('No')}">커피No</th>
-      <td th:text="${prod.get('name')}">메뉴명</td>
+      <th th:text="${prod.get('no')}">커피No</th>
+      <td th:text="${prod.get('coffee')}">메뉴명</td>
       <td th:text="${prod.get('kind')}">종류</td>
       <td th:text="${prod.get('price')}">가격</td>
       <td th:text="${prod.get('reg_day')}">등록일</td>
