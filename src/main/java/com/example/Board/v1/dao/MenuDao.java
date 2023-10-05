@@ -8,4 +8,12 @@ import java.util.Map;
 @Mapper // myBatis 사용, 해당 부분이 데이터를 연동해줌
 public interface MenuDao {
     List<Map<String, Object>> doList();
+
+    int doInsert(String strCoffee, String strKind, String strPrice);
+
+    int doDelete(int strNo);
+
+    Map<String, Object> doUpdateInfo(String strNo);
+
+    int doUpdate(String strCoffee, String strKind, String strPrice, String strNo);
 }

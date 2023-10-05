@@ -59,4 +59,25 @@ public class MenuSvc {
         // log.info(list);
         return list;
     }
+
+    public int doInsert(String strCoffee, String strKind, String strPrice) {
+        int i = menuDao.doInsert(strCoffee, strKind, strPrice);
+        return i;
+
+    }
+
+    public int doDelete(int strNo) {
+         int i = menuDao.doDelete(strNo);
+         return i;
+    }
+
+    public Map<String, Object> doUpdateInfo(String strNo) {
+        Map<String, Object> map = menuDao.doUpdateInfo(strNo);
+        return map;
+    }
+
+    public int doUpdate(String strCoffee, String strKind, String strPrice, String strNo) {
+        int i = menuDao.doUpdate(strCoffee, strKind, strPrice, strNo);
+        return i;
+    }
 }

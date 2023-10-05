@@ -11,4 +11,31 @@
             DATE_FORMAT(reg_day,'%Y.%m.%d') AS mod_day
         FROM coffee_menu;
     </select>
+
+    <insert id="doInsert">
+        INSERT INTO coffee_menu (coffee, kind, price)
+        VALUES (#{strCoffee},#{strKind},#{strPrice});
+    </insert>
+
+    <select id="doUpdateInfo" resultType="map">
+        SELECT coffee, kind, price,
+            DATE_FORMAT(reg_day,'%Y.%m.%d') AS reg_day,
+            DATE_FORMAT(reg_day,'%Y.%m.%d') AS mod_day
+            FROM coffee_menu
+        WHERE no = CAST(#{strNo} as INTEGER);
+    </select>
+
+    <update id="doUpdate">
+        UPDATE coffee_menu SET
+            coffee = #{strCoffee},
+            kind = #{strKind},
+            price = CAST(#{strPrice} as INTEGER)
+        WHERE no = CAST(#{strNo} as INTEGER);
+    </update>
+
+     <delete id="doDelete">
+        delete from coffee_menu where no = #{strNo};
+     </delete>
+
 </mapper>
+
