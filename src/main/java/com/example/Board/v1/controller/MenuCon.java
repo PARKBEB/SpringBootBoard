@@ -63,7 +63,9 @@ public class MenuCon {
         Map<String, Object> map = menuSvc.doUpdateInfo(strNo);
 
         model.addAttribute("map", map);
-        model.addAttribute("strNo", strNo);
+        // model.addAttribute("strNo", strNo);
+        System.out.println("strNoTest2: " + strNo);
+
 
         return "/v1/menu/menu_up";
     }
@@ -74,11 +76,13 @@ public class MenuCon {
                            @RequestParam("price") String strPrice,
                            @RequestParam("no") String strNo
     ) {
-        try {
-            int i = menuSvc.doUpdate(strCoffee, strKind, strPrice, strNo);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+
+        System.out.println("strNoTest: " + strNo);
+
+        int i = menuSvc.doUpdate(strCoffee, strKind, strPrice, strNo);
+
+
+        System.out.println("TEST2" + i);
         return "redirect:/v1/menu";
     }
 }

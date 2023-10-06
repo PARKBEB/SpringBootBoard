@@ -5,6 +5,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -77,7 +78,9 @@ public class MenuSvc {
     }
 
     public int doUpdate(String strCoffee, String strKind, String strPrice, String strNo) {
+        System.out.println("TEST : " + strCoffee + " " + strKind + " " + strPrice + " " + strNo);
         int i = menuDao.doUpdate(strCoffee, strKind, strPrice, strNo);
+        System.out.println("TEST3 : " + i);
         return i;
     }
 }
