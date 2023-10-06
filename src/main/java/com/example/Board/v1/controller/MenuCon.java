@@ -76,13 +76,8 @@ public class MenuCon {
                            @RequestParam("price") String strPrice,
                            @RequestParam("no") String strNo
     ) {
-
-        System.out.println("strNoTest: " + strNo);
-
         int i = menuSvc.doUpdate(strCoffee, strKind, strPrice, strNo);
 
-
-        System.out.println("TEST2" + i);
         return "redirect:/v1/menu";
     }
 }
