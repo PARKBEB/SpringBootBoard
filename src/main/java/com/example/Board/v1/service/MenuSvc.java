@@ -78,9 +78,15 @@ public class MenuSvc {
     }
 
     public int doUpdate(String strCoffee, String strKind, String strPrice, String strNo) {
-        System.out.println("TEST : " + strCoffee + " " + strKind + " " + strPrice + " " + strNo);
         int i = menuDao.doUpdate(strCoffee, strKind, strPrice, strNo);
-        System.out.println("TEST3 : " + i);
+
         return i;
     }
+
+    public List<Map<String, Object>> doSearch(String strStartDate, String strEndDate, String strCoffee, String strKind) {
+        List<Map<String, Object>> list = menuDao.doSearch(strStartDate, strEndDate, strCoffee, strKind);
+
+        return list;
+    }
 }
+

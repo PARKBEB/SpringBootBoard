@@ -80,4 +80,15 @@ public class MenuCon {
 
         return "redirect:/v1/menu";
     }
+
+    @GetMapping("/menu_search")
+    public String doSearch(@RequestParam("start_date") String strStartDate,
+                           @RequestParam("end_date") String strEndDate,
+                           @RequestParam("coffee") String strCoffee,
+                           @RequestParam("kind") String strKind, Model model) {
+
+        List<Map<String, Object>> list = menuSvc.doSearch(strStartDate, strEndDate, strCoffee, strKind);
+
+        return "list";
+    }
 }
