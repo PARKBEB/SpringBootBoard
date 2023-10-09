@@ -1,6 +1,6 @@
-package com.example.Board.v1.controller;
+package com.example.Board.v2.controller;
 
-import com.example.Board.v1.service.MenuSvc;
+import com.example.Board.v2.service.MenuSvcV2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,17 +9,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @Controller
-@RequestMapping("v1")
-public class MenuCon {
+@RequestMapping("v2")
+public class MenuConV2 {
 
     @Autowired // 아래 서비스를 bean에서 가져와 사용함
-    MenuSvc menuSvc;
+    MenuSvcV2 menuSvc;
 
     @RequestMapping("/menu")
     public String doMenu(Model model) { // Model객체는 컨트롤러 메서드에서 뷰로 데이터를 전달하는 데 사용
@@ -31,12 +29,12 @@ public class MenuCon {
         model.addAttribute("list", list);
         model.addAttribute("hello", "Menucon");
 
-        return "/v1/menu/menu";
+        return "/v2/menu/menu";
     }
 
     @GetMapping("/menu_ins")
     public String doInsert() {
-        return "/v1/menu/menu_ins";
+        return "/v2/menu/menu_ins";
     }
 
     @PostMapping("/menu_ins")
@@ -47,7 +45,7 @@ public class MenuCon {
         int i = menuSvc.doInsert(strCoffee, strKind, strPrice);
         System.out.println("Test10 : " + i);
 
-        return "redirect:/v1/menu";
+        return "redirect:/v2/menu";
     }
 
     @GetMapping("/menu_del")
@@ -55,7 +53,7 @@ public class MenuCon {
 
         menuSvc.doDelete(strNo);
 
-        return "redirect:/v1/menu";
+        return "redirect:/v2/menu";
     }
 
     @GetMapping("/menu_up")
@@ -68,7 +66,7 @@ public class MenuCon {
         System.out.println("strNoTest2: " + strNo);
 
 
-        return "/v1/menu/menu_up";
+        return "/v2/menu/menu_up";
     }
 
     @PostMapping("/menu_up")
@@ -79,7 +77,7 @@ public class MenuCon {
     ) {
         int i = menuSvc.doUpdate(strCoffee, strKind, strPrice, strNo);
 
-        return "redirect:/v1/menu";
+        return "redirect:/v2/menu";
     }
 
     @PostMapping("/menu_search")
@@ -95,7 +93,7 @@ public class MenuCon {
 
         System.out.println("END01 : " + model);
 
-        return "/v1/menu/menu";
+        return "/v2/menu/menu";
     }
 
     @PostMapping("/updatePrice")
@@ -108,6 +106,6 @@ public class MenuCon {
             }
         }
 
-        return "redirect:/v1/menu";
+        return "redirect:/v2/menu";
     }
 }

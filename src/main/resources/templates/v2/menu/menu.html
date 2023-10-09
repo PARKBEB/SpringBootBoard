@@ -14,10 +14,10 @@
 
 <!-- 헤더 위치 -->
 <div class="topnav">
-  <a href="/v1/home">Home</a>
-  <a href="/v1/menu">커피메뉴</a>
-  <a href="/v1/order">주문내역</a>
-  <a href="/v1/member">고객정보</a>
+  <a href="/v2/home">Home</a>
+  <a href="/v2/menu">커피메뉴</a>
+  <a href="/v2/order">주문내역</a>
+  <a href="/v2/member">고객정보</a>
 </div>
 
 
@@ -26,7 +26,7 @@
   <div id="search" style="height: 150px;padding: 15px; font-size: small; width: 90%; margin-left: auto;  margin-right: auto;">
     <h3>[ Coffee menu Management <span style="font-size:30px;">&#9749;</span> ]<th:block th:text="${hello}"/></h3>
 
-    <form name="fm_menu" autocomplete="on" action="/v1/menu_search" method="post">
+    <form name="fm_menu" autocomplete="on" action="/v2/menu_search" method="post">
       <fieldset>
         <legend> [검색조건] </legend>
         <label>등록기간</label><input type="date" id="start_date" name="start_date" min="2020-01-01" max="2023-12-31">
@@ -42,7 +42,7 @@
       </select>
 
         &nbsp;&nbsp;<input type="submit" value="조회" style="width: 80px;height: 30px;font-weight: bold; font-size: medium">
-        &nbsp;&nbsp;<button style="width: 80px;height: 30px;font-weight: bold; font-size: medium"><a href="/v1/menu_ins">등록</a></button>
+        &nbsp;&nbsp;<button style="width: 80px;height: 30px;font-weight: bold; font-size: medium"><a href="/v2/menu_ins">등록</a></button>
         &nbsp;&nbsp;<button type="button" id="IdUpdateAll" style="width: 80px;height: 30px;font-weight: bold; font-size: medium" onclick="onModify()">가격수정</button>
         <!-- <a href="javascript:loadDocArray()">test</a> -->
         <!--        <label>CheckBox : </label><span id="idCheckBox"></span>-->
@@ -54,7 +54,7 @@
   </div>
 
 
-  <form name="formTable" id="IdFormTable" method="post" action="/v1/updatePrice">
+  <form name="formTable" id="IdFormTable" method="post" action="/v2/updatePrice">
   <table class="table">
     <thead>
       <tr class="tr_td">
@@ -82,8 +82,8 @@
       <td th:text="${prod.get('price')}">가격</td>
       <td th:text="${prod.get('reg_day')}">등록일</td>
       <td th:text="${prod.get('mod_day')}">수정일</td>
-      <td><a th:href="@{/v1/menu_up(no=${prod.get('no')})}">수정</a></td>
-      <td><a th:href="@{/v1/menu_del(no=${prod.get('no')})}">삭제</a></td>
+      <td><a th:href="@{/v2/menu_up(no=${prod.get('no')})}">수정</a></td>
+      <td><a th:href="@{/v2/menu_del(no=${prod.get('no')})}">삭제</a></td>
     </tr>
     </tbody>
   </table>
@@ -92,7 +92,7 @@
 </div>
 
 <!-- 푸터 위치 -->
-<th:block th:replace="/v1/comm/footer :: footerFragment"></th:block>
+<th:block th:replace="/v2/comm/footer :: footerFragment"></th:block>
 
 <script>
     /* 현재 시간 날짜에 적용 시키기 */

@@ -1,11 +1,9 @@
-package com.example.Board.v1.service;
+package com.example.Board.v2.service;
 
-import com.example.Board.v1.dao.MenuDao;
-import lombok.extern.log4j.Log4j2;
+import com.example.Board.v2.dao.MenuDaoV2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -13,16 +11,16 @@ import java.util.Map;
 
 @Service // IoC 컨테이너에 등록, 객체를 한 번만 생성한 후 재사용하고 싶음 > Bean에 등록된 MenuSvc 사용
 // @Log4j2
-public class MenuSvc {
+public class MenuSvcV2 {
     @Autowired
-    MenuDao menuDao;
+    MenuDaoV2 menuDao;
 
     public List<Map<String, Object>> doList() {
         List<Map<String, Object>> list = menuDao.doList();
 
         return list;
     }
-    public MenuSvc() {
+    public MenuSvcV2() {
         System.out.println("1234"); // 호출될 때 객체가 생성되는 것이 아닌 스프링 부트가 실행될 떄,객체 생성됨
     }
     public List<Map<String, Object>> doListOld() {
