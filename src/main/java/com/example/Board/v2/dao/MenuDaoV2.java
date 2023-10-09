@@ -1,5 +1,6 @@
 package com.example.Board.v2.dao;
 
+import com.example.Board.v2.vo.Coffee_menu;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.Map;
 
 @Mapper // myBatis 사용, 해당 부분이 데이터를 연동해줌
 public interface MenuDaoV2 {
-    List<Map<String, Object>> doList();
+    List<Coffee_menu> doList();
 
     int doInsert(String strCoffee, String strKind, String strPrice);
 
@@ -17,7 +18,7 @@ public interface MenuDaoV2 {
 
     int doUpdate(String strCoffee, String strKind, String strPrice, String strNo);
 
-    List<Map<String, Object>> doSearch(String strStartDate, String strEndDate, String strCoffee, String strKind);
+    List<Coffee_menu> doSearch(String strStartDate, String strEndDate, String strCoffee, String strKind);
 
     int doupdatePrice(String strNo, String strPrice);
 }

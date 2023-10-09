@@ -1,6 +1,7 @@
 package com.example.Board.v2.controller;
 
 import com.example.Board.v2.service.MenuSvcV2;
+import com.example.Board.v2.vo.Coffee_menu;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +23,7 @@ public class MenuConV2 {
     @RequestMapping("/menu")
     public String doMenu(Model model) { // Model객체는 컨트롤러 메서드에서 뷰로 데이터를 전달하는 데 사용
         // Data 만들기, List, Map
-        List<Map<String, Object>> list = menuSvc.doList();
+        List<Coffee_menu> list = menuSvc.doList();
 
 
         // Data 송부
@@ -88,7 +89,7 @@ public class MenuConV2 {
 
         System.out.println("TEST01 : " + strStartDate + " " + strEndDate + " " + strCoffee + " " + strKind);
 
-        List<Map<String, Object>> list = menuSvc.doSearch(strStartDate, strEndDate, strCoffee, strKind);
+        List<Coffee_menu> list = menuSvc.doSearch(strStartDate, strEndDate, strCoffee, strKind);
         model.addAttribute("list", list);
 
         System.out.println("END01 : " + model);

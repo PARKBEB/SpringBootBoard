@@ -5,7 +5,7 @@
 
 <mapper namespace="com.example.Board.v2.dao.MenuDaoV2">
     <!-- 메뉴 조회 -->
-    <select id="doList" resultType="map">
+    <select id="doList" resultType="com.example.Board.v2.vo.Coffee_menu">
         SELECT no, coffee, kind, price,
             DATE_FORMAT(reg_day,'%Y.%m.%d') AS reg_day,
             DATE_FORMAT(reg_day,'%Y.%m.%d') AS mod_day
@@ -18,7 +18,7 @@
            &gt;
     -->
     <!-- 검색 조회 -->
-    <select id="doSearch" resultType="map">
+    <select id="doSearch" resultType="com.example.Board.v2.vo.Coffee_menu">
         SELECT no, coffee, kind, price,
                 DATE_FORMAT(reg_day,'%Y.%m.%d') AS reg_day,
                 DATE_FORMAT(reg_day,'%Y.%m.%d') AS mod_day

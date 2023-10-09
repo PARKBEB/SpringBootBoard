@@ -1,6 +1,7 @@
 package com.example.Board.v2.service;
 
 import com.example.Board.v2.dao.MenuDaoV2;
+import com.example.Board.v2.vo.Coffee_menu;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +16,8 @@ public class MenuSvcV2 {
     @Autowired
     MenuDaoV2 menuDao;
 
-    public List<Map<String, Object>> doList() {
-        List<Map<String, Object>> list = menuDao.doList();
+    public List<Coffee_menu> doList() {
+        List<Coffee_menu> list = menuDao.doList();
 
         return list;
     }
@@ -81,10 +82,10 @@ public class MenuSvcV2 {
         return i;
     }
 
-    public List<Map<String, Object>> doSearch(String strStartDate, String strEndDate, String strCoffee, String strKind) {
+    public List<Coffee_menu> doSearch(String strStartDate, String strEndDate, String strCoffee, String strKind) {
         System.out.println("TEST02 : " + strStartDate + " " + strEndDate + " " + strCoffee + " " + strKind);
 
-        List<Map<String, Object>> list = menuDao.doSearch(strStartDate, strEndDate, strCoffee, strKind);
+        List<Coffee_menu> list = menuDao.doSearch(strStartDate, strEndDate, strCoffee, strKind);
 
         System.out.println("END02 :" + list);
 
