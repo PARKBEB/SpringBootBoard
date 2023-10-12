@@ -5,10 +5,7 @@ import com.example.Board.v2.vo.Coffee_menu;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
@@ -39,12 +36,8 @@ public class MenuConV2 {
     }
 
     @PostMapping("/menu_ins")
-    public String doInsertPost(@RequestParam("coffee") String strCoffee,
-                               @RequestParam("kind") String strKind,
-                               @RequestParam("price") String strPrice
-    ) {
-        int i = menuSvc.doInsert(strCoffee, strKind, strPrice);
-        System.out.println("Test10 : " + i);
+    public String doInsertPost(@ModelAttribute Coffee_menu coffeeMenu) {
+        int i = menuSvc.doInsert(coffeeMenu);
 
         return "redirect:/v2/menu";
     }
@@ -71,12 +64,8 @@ public class MenuConV2 {
     }
 
     @PostMapping("/menu_up")
-    public String doUpdate(@RequestParam("coffee") String strCoffee,
-                           @RequestParam("kind") String strKind,
-                           @RequestParam("price") String strPrice,
-                           @RequestParam("no") String strNo
-    ) {
-        int i = menuSvc.doUpdate(strCoffee, strKind, strPrice, strNo);
+    public String doUpdate(Coffee_menu coffeeMenu) {
+        int i = menuSvc.doUpdate(coffeeMenu);
 
         return "redirect:/v2/menu";
     }

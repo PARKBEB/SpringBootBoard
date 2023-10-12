@@ -60,8 +60,8 @@ public class MenuSvcV2 {
         return list;
     }
 
-    public int doInsert(String strCoffee, String strKind, String strPrice) {
-        int i = menuDao.doInsert(strCoffee, strKind, strPrice);
+    public int doInsert(Coffee_menu coffeeMenu) {
+        int i = menuDao.doInsert(coffeeMenu);
         return i;
 
     }
@@ -76,8 +76,8 @@ public class MenuSvcV2 {
         return map;
     }
 
-    public int doUpdate(String strCoffee, String strKind, String strPrice, String strNo) {
-        int i = menuDao.doUpdate(strCoffee, strKind, strPrice, strNo);
+    public int doUpdate(Coffee_menu coffeeMenu) {
+        int i = menuDao.doUpdate(coffeeMenu);
 
         return i;
     }

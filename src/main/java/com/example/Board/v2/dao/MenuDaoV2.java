@@ -10,13 +10,13 @@ import java.util.Map;
 public interface MenuDaoV2 {
     List<Coffee_menu> doList();
 
-    int doInsert(String strCoffee, String strKind, String strPrice);
+    int doInsert(Coffee_menu coffeeMenu);
 
     int doDelete(int strNo);
 
     Map<String, Object> doUpdateInfo(String strNo);
 
-    int doUpdate(String strCoffee, String strKind, String strPrice, String strNo);
+    int doUpdate(Coffee_menu coffeeMenu);
 
     List<Coffee_menu> doSearch(String strStartDate, String strEndDate, String strCoffee, String strKind);
 

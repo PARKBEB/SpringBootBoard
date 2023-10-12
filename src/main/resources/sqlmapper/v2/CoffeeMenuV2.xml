@@ -36,7 +36,7 @@
 
     <insert id="doInsert">
         INSERT INTO coffee_menu (coffee, kind, price)
-        VALUES (#{strCoffee},#{strKind},#{strPrice})
+        VALUES (#{coffee},#{kind},#{price})
     </insert>
 
     <select id="doUpdateInfo" resultType="map">
@@ -49,10 +49,10 @@
 
     <update id="doUpdate">
         UPDATE coffee_menu SET
-            coffee = #{strCoffee},
-            kind = #{strKind},
-            price = CAST(#{strPrice} as INTEGER)
-        WHERE no = CAST(#{strNo} as INTEGER)
+            coffee = #{coffee},
+            kind = #{kind},
+            price = CAST(#{price} as INTEGER)
+        WHERE no = CAST(#{no} as INTEGER)
     </update>
 
     <update id="doupdatePrice">
