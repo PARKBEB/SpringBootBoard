@@ -1,6 +1,8 @@
 package com.example.Board.v2.dao;
 
 import com.example.Board.v2.vo.Coffee_menu;
+import com.example.Board.v2.vo.Member;
+import com.example.Board.v2.vo.Order;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -21,4 +23,12 @@ public interface MenuDaoV2 {
     List<Coffee_menu> doSearch(String strStartDate, String strEndDate, String strCoffee, String strKind);
 
     int doupdatePrice(String strNo, String strPrice);
+
+    List<Order> doOrder();
+
+    List<Member> doMember();
+
+    List<Order> doOrderSearch(String strStartDate, String strEndDate, String strCoffee, String strName);
+
+    List<Member> doMemberSearch(String strStartDate, String strEndDate, String strName);
 }

@@ -2,6 +2,8 @@ package com.example.Board.v2.service;
 
 import com.example.Board.v2.dao.MenuDaoV2;
 import com.example.Board.v2.vo.Coffee_menu;
+import com.example.Board.v2.vo.Member;
+import com.example.Board.v2.vo.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,7 @@ public class MenuSvcV2 {
 
         return list;
     }
+
     public MenuSvcV2() {
         System.out.println("1234"); // 호출될 때 객체가 생성되는 것이 아닌 스프링 부트가 실행될 떄,객체 생성됨
     }
@@ -96,6 +99,32 @@ public class MenuSvcV2 {
         int i = menuDao.doupdatePrice(strNo, strPrice);
 
         return i;
+    }
+
+    // 주문
+    public List<Order> doOrder() {
+        List<Order> list = menuDao.doOrder();
+
+        return list;
+    }
+
+    public List<Member> doMember() {
+        List<Member> list = menuDao.doMember();
+
+        return list;
+    }
+
+
+    public List<Order> doOrderSearch(String strStartDate, String strEndDate, String strCoffee, String strName) {
+        List<Order> list = menuDao.doOrderSearch(strStartDate, strEndDate, strCoffee, strName);
+
+        return list;
+    }
+
+    public List<Member> doMemberSearch(String strStartDate, String strEndDate, String strName) {
+        List<Member> list = menuDao.doMemberSearch(strStartDate, strEndDate, strName);
+
+        return list;
     }
 }
 
